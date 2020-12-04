@@ -41,15 +41,7 @@
         android:id="@+id/viewTransactionsFragment"
         android:name="com.saif.jetpacknavigationexample.ViewTransactionsFragment"
         android:label="ViewTransactionsFragment"
-        tools:layout="@layout/fragment_view_transactions">
-        <action
-            android:id="@+id/action_viewTransactionsFragment_to_sendCashFragment"
-            app:destination="@id/sendCashFragment">
-            <argument
-                android:name="amount"
-                android:defaultValue="200L" />
-        </action>
-    </fragment>
+        tools:layout="@layout/fragment_view_transactions" />
     <fragment
         android:id="@+id/chooseReceiverFragment"
         android:name="com.saif.jetpacknavigationexample.ChooseReceiverFragment"
@@ -71,8 +63,20 @@
         <argument
             android:name="receiverName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_sendCashFragment_to_confirmDialogFragment"
+            app:destination="@id/confirmDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/confirmDialogFragment"
+        android:name="com.saif.jetpacknavigationexample.ConfirmDialogFragment"
+        android:label="fragment_confirm_dialog"
+        tools:layout="@layout/fragment_confirm_dialog">
+        <argument
+            android:name="receiverName"
+            app:argType="string" />
         <argument
             android:name="amount"
             app:argType="long" />
-    </fragment>
+    </dialog>
 </navigation>

@@ -2,6 +2,7 @@ package com.saif.jetpacknavigationexample
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
@@ -17,10 +18,21 @@ class SendCashFragment : Fragment(R.layout.fragment_send_cash){
         super.onViewCreated(view, savedInstanceState)
 
         val receiverName = args.receiverName
-        val amount = args.amount
 
         tv_receiver.text = "Send cash to $receiverName"
-        et_amount.setText(amount.toString())
+
+        btn_send.setOnClickListener {
+
+            if(et_amount.text.toString().isEmpty()) {
+                Toast.makeText(requireContext(), "Enter some amount", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val amount = et_amount.text.toString().toLong()
+            val action = SendCashFragmentDirections
+                    .actionSendCashFragmentToConfirmDialogFragment(receiverName, amount)
+            findNavController().navigate(action)
+        }
 
     }
 
