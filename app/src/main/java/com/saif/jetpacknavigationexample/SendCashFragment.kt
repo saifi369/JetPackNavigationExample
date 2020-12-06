@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_send_cash.*
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SendCashFragment : Fragment(R.layout.fragment_send_cash){
 
@@ -16,6 +17,11 @@ class SendCashFragment : Fragment(R.layout.fragment_send_cash){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        et_amount.setText(SampleData.defaultAmount.value.toString())
+        SampleData.defaultAmount.observe(viewLifecycleOwner){
+            et_amount.setText(it.toString())
+        }
 
         val receiverName = args.receiverName
 

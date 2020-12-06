@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.saif.jetpacknavigationexample.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_chooseReceiverFragment"
@@ -35,17 +35,17 @@
     <fragment
         android:id="@+id/viewBalanceFragment"
         android:name="com.saif.jetpacknavigationexample.ViewBalanceFragment"
-        android:label="fragment_view_balance"
+        android:label="Balance"
         tools:layout="@layout/fragment_view_balance" />
     <fragment
         android:id="@+id/viewTransactionsFragment"
         android:name="com.saif.jetpacknavigationexample.ViewTransactionsFragment"
-        android:label="ViewTransactionsFragment"
+        android:label="Transactions"
         tools:layout="@layout/fragment_view_transactions" />
     <fragment
         android:id="@+id/chooseReceiverFragment"
         android:name="com.saif.jetpacknavigationexample.ChooseReceiverFragment"
-        android:label="fragment_choose_receiver"
+        android:label="Send Cash - Receiver"
         tools:layout="@layout/fragment_choose_receiver">
         <action
             android:id="@+id/action_chooseReceiverFragment_to_sendCashFragment"
@@ -58,7 +58,7 @@
     <fragment
         android:id="@+id/sendCashFragment"
         android:name="com.saif.jetpacknavigationexample.SendCashFragment"
-        android:label="fragment_send_cash"
+        android:label="Send Cash - {receiverName}"
         tools:layout="@layout/fragment_send_cash">
         <argument
             android:name="receiverName"
@@ -73,8 +73,7 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <dialog
         android:id="@+id/confirmDialogFragment"
@@ -88,4 +87,9 @@
             android:name="amount"
             app:argType="long" />
     </dialog>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.saif.jetpacknavigationexample.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
