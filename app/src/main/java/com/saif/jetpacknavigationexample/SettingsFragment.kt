@@ -20,6 +20,11 @@ class SettingsFragment : Fragment(R.layout.fragment_settings){
             SampleData.defaultAmount.value = defaultAmount
         }
 
+        btn_about_app.setOnClickListener {
+            val action = MainNavGraphDirections.actionGlobalAboutAppFragment()
+            findNavController().navigate(action)
+        }
+
     }
 
 }

@@ -8,4 +8,10 @@
         android:menuCategory="secondary"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/item_about_app"
+        android:title="About App"
+        android:icon="@drawable/ic_info"
+        app:showAsAction="always"/>
+
 </menu>
