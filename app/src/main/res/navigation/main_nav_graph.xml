@@ -105,4 +105,9 @@
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.saif.jetpacknavigationexample.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>
