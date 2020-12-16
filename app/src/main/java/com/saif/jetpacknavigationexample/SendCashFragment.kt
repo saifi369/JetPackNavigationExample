@@ -24,8 +24,9 @@ class SendCashFragment : Fragment(R.layout.fragment_send_cash){
         }
 
         val receiverName = args.receiverName
+        val test = args.test
 
-        tv_receiver.text = "Send cash to $receiverName"
+        tv_receiver.text = "Send cash to $receiverName\n$test"
 
         btn_send.setOnClickListener {
 

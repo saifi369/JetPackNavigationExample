@@ -74,6 +74,12 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/homeFragment" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.navcomponent.com/{receiverName}/{test}" />
+        <argument
+            android:name="test"
+            app:argType="string" />
     </fragment>
     <dialog
         android:id="@+id/confirmDialogFragment"
@@ -96,8 +102,7 @@
         android:id="@+id/aboutAppFragment"
         android:name="com.saif.jetpacknavigationexample.AboutAppFragment"
         android:label="About App"
-        tools:layout="@layout/fragment_about_app">
-    </fragment>
+        tools:layout="@layout/fragment_about_app"></fragment>
     <action
         android:id="@+id/action_global_aboutAppFragment"
         app:destination="@id/aboutAppFragment"
